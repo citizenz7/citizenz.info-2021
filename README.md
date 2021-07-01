@@ -1,6 +1,6 @@
-# BLOG
-`BLOG` is a blog based system made with Symfony 5 framework.
-It's a multilingual blog
+# CITIZENZ.INFO
+This is a blog based system made with Symfony 5 framework for citizenz.info
+It's a multilingual blog.
 
 ## Template
 Free template (HTML + CSS) is from https://bootstrapmade.com (Moderna)
@@ -25,7 +25,7 @@ Free template (HTML + CSS) is from https://bootstrapmade.com (Moderna)
 * Translation function (TransalatorInterface): EN, FR, ES
 Add language with (as an example for spanish language): `symfony console translation:update --force es` then you'll have a new file in /translations folder you'll need to translate manually. Same command if you want to update the translation.
 If you add any language, don't forget to update config/services.yaml adding the language 2 letters to `app.locales` like this:
-`app.locales: [en, fr, es]`
+`app.locales: [fr, en]`
 ### Entities
 * articles
 * comments
