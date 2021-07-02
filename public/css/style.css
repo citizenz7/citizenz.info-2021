@@ -1997,6 +1997,7 @@ section {
   margin: 0 0 15px 0;
   color: #1e4356;
   position: relative;
+  border-bottom: 1px solid #1e4356;
 }
 
 .blog .sidebar .sidebar-item {

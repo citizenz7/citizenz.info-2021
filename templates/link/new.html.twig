@@ -14,7 +14,8 @@
 
                 <ol>
                     <li><a href="{{ path('home') }}">Accueil</a></li>
-                    <li>Lien web</li>
+                    <li><a href="{{ path('admin') }}">Admin</a></li>
+                    <li>Créer un nouveau lien web</li>
                 </ol>
             </div>
 
@@ -27,7 +28,7 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h2>Créer un lien web</h2>
+                    <h2>Créer un nouveau lien web</h2>
 
                     {{ include('link/_form.html.twig') }}
 

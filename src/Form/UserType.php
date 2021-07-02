@@ -22,7 +22,7 @@ class UserType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Email'
+                    'placeholder' => 'E-mail'
                 ]
             ])
             //->add('roles')
@@ -31,7 +31,7 @@ class UserType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Username'
+                    'placeholder' => 'Pseudo'
                 ]
             ])
             ->add('image', FileType::class, [
@@ -59,7 +59,7 @@ class UserType extends AbstractType
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'rows' => '3',
-                    'placeholder' => 'Presentation'
+                    'placeholder' => 'Présentation'
                 ]
             ])
             ->add('facebook', UrlType::class, [
@@ -67,7 +67,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Facebook profile'
+                    'placeholder' => 'Votre profil Facebook'
                 ]
             ])
             ->add('twitter', UrlType::class, [
@@ -75,7 +75,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Twitter profile'
+                    'placeholder' => 'Votre profil Twitter'
                 ]
             ])
             ->add('instagram', UrlType::class, [
@@ -83,7 +83,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Instagram profile'
+                    'placeholder' => 'Votre profil Instagram'
                 ]
             ])
             ->add('linkedin', UrlType::class, [
@@ -91,7 +91,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your LinkedIn profile'
+                    'placeholder' => 'Votre profil LinkedIn'
                 ]
             ])
             ->add('github', UrlType::class, [
@@ -99,7 +99,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Github profile'
+                    'placeholder' => 'Votre profil Github'
                 ]
             ])
             ->add('youtube', UrlType::class, [
@@ -107,7 +107,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Youtube profile'
+                    'placeholder' => 'Votre profil Youtube'
                 ]
             ])
             ->add('discord', UrlType::class, [
@@ -115,7 +115,7 @@ class UserType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your Discord full URL ID'
+                    'placeholder' => 'Votre profil Discord'
                 ]
             ])
         ;

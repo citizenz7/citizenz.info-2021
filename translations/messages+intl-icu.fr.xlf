@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+        <trans-unit id="kCTBl9j" resname="Entrez un mot-clé">
+            <source>Entrez un mot-clé</source>
+            <target>Entrez un mot-clé</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9k" resname="Recherche">
+            <source>Recherche</source>
+            <target>Recherche</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9l" resname="E-mail">
+            <source>E-mail</source>
+            <target>E-mail</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9m" resname="Pseudo">
+            <source>Pseudo</source>
+            <target>Pseudo</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9n" resname="Mot de passe">
+            <source>Mot de passe</source>
+            <target>Mot de passe</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9o" resname="Confirmer le mot de passe">
+            <source>Confirmer le mot de passe</source>
+            <target>Confirmer le mot de passe</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9p" resname="Présentation">
+            <source>Présentation</source>
+            <target>Présentation</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9q" resname="Votre profil Facebook">
+            <source>Votre profil Facebook</source>
+            <target>Votre profil Facebook</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9r" resname="Votre profil Twitter">
+            <source>Votre profil Twitter</source>
+            <target>Votre profil Twitter</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9s" resname="Votre profil Instagram">
+            <source>Votre profil Instagram</source>
+            <target>Votre profil Instagram</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9t" resname="Votre profil LinkedIn">
+            <source>Votre profil LinkedIn</source>
+            <target>Votre profil LinkedIn</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9u" resname="Votre profil Github">
+            <source>Votre profil Github</source>
+            <target>Votre profil Github</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9v" resname="Votre profil Youtube">
+            <source>Votre profil Youtube</source>
+            <target>Votre profil Youtube</target>
+        </trans-unit>
+        <trans-unit id="kCTBl9w" resname="Votre profil Discord">
+            <source>Votre profil Discord</source>
+            <target>Votre profil Discord</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD2" resname="Titre">
+            <source>Titre</source>
+            <target>Titre</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD3" resname="Contenu">
+            <source>Contenu</source>
+            <target>Contenu</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD4" resname="Image de l'article">
+            <source>Image de l'article</source>
+            <target>Image de l'article</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD5" resname="Catégories de l'article. Choisissez-en une ou plusieurs.">
+            <source>Catégories de l'article. Choisissez-en une ou plusieurs.</source>
+            <target>Catégories de l'article. Choisissez-en une ou plusieurs.</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD6" resname="Tags de l'article. Choisissez-en un ou plusieurs.">
+            <source>Tags de l'article. Choisissez-en un ou plusieurs.</source>
+            <target>Tags de l'article. Choisissez-en un ou plusieurs.</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD7" resname="Actif ?">
+            <source>Actif ?</source>
+            <target>Actif ?</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD8" resname="Oui">
+            <source>Oui</source>
+            <target>Oui</target>
+        </trans-unit>
+        <trans-unit id="2CwrYD9" resname="Non">
+            <source>Non</source>
+            <target>Non</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE1" resname="Nom de la catégorie">
+            <source>Nom de la catégorie</source>
+            <target>Nom de la catégorie</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE2" resname="Titre">
+            <source>Titre</source>
+            <target>Titre</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE3" resname="Modifier le Tag">
+            <source>Modifier le Tag</source>
+            <target>Modifier le Tag</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE4" resname="Rgpd">
+            <source>Rgpd</source>
+            <target>Rpgd</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE5" resname="Code anti spam">
+            <source>Code anti spam</source>
+            <target>Code anti spam</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE6" resname="Url">
+            <source>Url</source>
+            <target>Url</target>
+        </trans-unit>
+    </body>
+  </file>
+</xliff>

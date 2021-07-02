@@ -20,16 +20,19 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'label' => 'E-mail',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
             ])
             ->add('nickname', TextType::class, [
+                'label' => 'Pseudo',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
             ])
             ->add('content', TextareaType::class, [
+                'label' => 'Contenu',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
@@ -46,6 +49,7 @@ class CommentType extends AbstractType
                 'mapped' => false
             ])
             ->add('captcha', CaptchaType::class, [
+                'label' => 'Code anti spam',
                 'attr' => [
                     'style' => 'width: 200px',
                     'class' => 'mb-3'

@@ -17,7 +17,7 @@ class CategoryType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Category name'
+                    'placeholder' => 'Nom de la catégorie'
                 ]
             ])
             //->add('slug')

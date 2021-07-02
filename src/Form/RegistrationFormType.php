@@ -24,14 +24,14 @@ class RegistrationFormType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Email'
+                    'placeholder' => 'E-mail'
                 ]
             ])
             ->add('username', TextType::class, [
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Nickname'
+                    'placeholder' => 'Pseudo'
                 ]
             ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -42,7 +42,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter les CGU.',
                     ]),
                 ],
             ])
@@ -56,17 +56,17 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entrer un mto de passe',
                     ]),
                     new Length([
                         'min' => 8,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'minMessage' => 'Votre mot de passe devrait faire au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
                 ],
-                'first_options' => ['label' => false, 'attr' => [ 'class' => 'form-control mb-3', 'placeholder' => 'Password']],
-                'second_options' => ['label' => false, 'attr' => [ 'class' => 'form-control mb-3', 'placeholder' => 'Confirm password']]
+                'first_options' => ['label' => false, 'attr' => [ 'class' => 'form-control mb-3', 'placeholder' => 'Mot de passe']],
+                'second_options' => ['label' => false, 'attr' => [ 'class' => 'form-control mb-3', 'placeholder' => 'Confirmer le mot de passe']]
             ])
         ;
     }

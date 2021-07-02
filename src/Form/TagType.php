@@ -14,7 +14,7 @@ class TagType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Title',
+                'label' => 'Titre',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]

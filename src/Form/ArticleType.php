@@ -22,13 +22,13 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Title',
+                'label' => 'Titre',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ]
             ])
             ->add('content', CKEditorType::class, [
-                'label' => 'Content',
+                'label' => 'Contenu',
                 'attr' => [
                     'class' => 'form-control mb-3',
                     'rows' => '12'
@@ -40,14 +40,14 @@ class ArticleType extends AbstractType
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ],
-                'label' => 'Is it active?',
+                'label' => 'Actif ?',
                 'choices' => [
-                    'Yes' => 1,
-                    'No' => 0
+                    'Oui' => 1,
+                    'Non' => 0
                 ],
             ])
             ->add('image', FileType::class, [
-                'label' => 'Article image',
+                'label' => 'Image de l\'article',
                 'attr' => [
                     'class' => 'form-control mb-3'
                 ],
@@ -67,7 +67,7 @@ class ArticleType extends AbstractType
             //->add('slug')
             //->add('author')
             ->add('category', EntityType::class, [
-                'label' => 'Article\'s categories. Choose one or more.',
+                'label' => 'Catégories de l\'article. Choisissez-en une ou plusieurs.',
                 'class' => Category::class,
                 'choice_label' => 'title',
                 'multiple' => true,
@@ -80,7 +80,7 @@ class ArticleType extends AbstractType
                 }
             ])
             ->add('tag', EntityType::class, [
-                'label' => 'Article\'s tags. Choose one or more.',
+                'label' => 'Tags de l\'article. Choisissez-en un ou plusieurs.',
                 'class' => Tag::class,
                 'choice_label' => 'title',
                 'multiple' => true,
