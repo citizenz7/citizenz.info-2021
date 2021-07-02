@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {{ tag.title }}{% endblock %}
+{% block title %}{{ site_name }} : {{ tag.title }}{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -13,7 +13,7 @@
                 <h2>Tag</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('admin') }}">Admin</a></li>
                     <li><a href="{{ path('tag_admin_index') }}">Tag</a></li>
                     <li>{{ tag.title }}</li>
@@ -29,9 +29,9 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h1>{% trans %}Edit Ta{% endtrans %}</h1>
+                    <h1>{% trans %}Modifier le Tag{% endtrans %}</h1>
 
-                    {{ include('tag/_form.html.twig', {'button_label': 'Update'}) }}
+                    {{ include('tag/_form.html.twig', {'button_label': 'Modifier}) }}
 
                 </div>
             </div>

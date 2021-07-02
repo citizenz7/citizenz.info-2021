@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}welcome!{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : Bienvenue !{% endblock %}
 
 {% block body %}
 
@@ -14,7 +14,7 @@
                 <h2>{{ site_name_full }}</h2>
 
                 <ol>
-                    <li>{% trans %}Home{% endtrans %}</li>
+                    <li>Accueil</li>
                 </ol>
             </div>
 
@@ -66,16 +66,19 @@
 
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="">{% trans %}Posted by{% endtrans %} {{ art.author }}</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="">{% trans %}Posted {% endtrans %} {{ art.createdAt|ago }}</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="">{{ art.author }}</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-calendar"></i> <a href="">{{ art.createdAt|ago }}</a></li>
+                                    {% if art.updatedAt %}
+                                        <li class="d-flex align-items-center"><i class="bi bi-arrow-counterclockwise"></i> <a href="">{{ art.updatedAt|ago }}</a></li>
+                                    {% endif %}
                                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> 
                                         {% if (art.comment|length) <= 1  %}
-                                            <a href="">{{ art.comment|length }} {% trans %}Comment{% endtrans %}</a>
+                                            <a href="">{{ art.comment|length }} Commentaire</a>
                                         {% else %}
-                                            <a href="">{{ art.comment|length }} {% trans %}Comments{% endtrans %}</a>
+                                            <a href="">{{ art.comment|length }} Commentaires</a>
                                         {% endif %}
                                     </li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="">{{ art.views }} {% trans %}views{% endtrans %}</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="">{{ art.views }} lectures</a></li>
                                 </ul>
                             </div>
 
@@ -84,7 +87,7 @@
                                     {{ art.content|slice(0,250)|raw }}...
                                 </p>
                                 <div class="read-more">
-                                    <a href="{{ path('article_show', {'slug': art.slug}) }}">{% trans %}Read More{% endtrans %}</a>
+                                    <a href="{{ path('article_show', {'slug': art.slug}) }}">Lire la suite</a>
                                 </div>
                             </div>
 

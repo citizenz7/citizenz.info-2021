@@ -56,6 +56,15 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    // Count active articles in sidebar
+    public function AllActiveArticlesSidebar(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.is_active = true')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     // 3 most popular last articles (by views)
     /**

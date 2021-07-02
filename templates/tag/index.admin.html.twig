@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}tag index{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : liste des tags{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -13,9 +13,9 @@
                 <h2>Tag</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('admin') }}">Admin</a></li>
-                    <li>{% trans %}Tag index{% endtrans %}</li>
+                    <li>Liste des tags</li>
                 </ol>
             </div>
 
@@ -28,28 +28,36 @@
 
         <div class="row py-5">
 
-            {% for message in app.flashes('message') %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert"">
+            {% for message in app.flashes('edited') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endfor %}
 
-            {% for message in app.flashes('message_deleted') %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert"">
+            {% for message in app.flashes('deleted') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ message }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endfor %}
+
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+
 
             <div class="col mb-4">
-                <h1>{% trans %}Tag index{% endtrans %}</h1>
+                <h2>Liste des tags</h2>
 
                 <table class="table mb-5">
                     <thead>
                         <tr>
                             <th width="4%">{{ knp_pagination_sortable(tags, 'Id', 'p.id') }}</th>
-                            <th>{{ knp_pagination_sortable(tags, 'Title', 'p.title') }}</th>
+                            <th>{{ knp_pagination_sortable(tags, 'Titre', 'p.title') }}</th>
                             <th>Slug</th>
                             <th width="11%"></th>
                             <th width="4%"></th>
@@ -62,8 +70,8 @@
                             <td>{{ tag.title }}</td>
                             <td>{{ tag.slug }}</td>
                             <td>
-                                <a class="btn btn-sm btn-info" href="{{ path('tag_show', {'slug': tag.slug}) }}">{% trans %}show{% endtrans %}</a>
-                                <a class="btn btn-sm btn-warning" href="{{ path('tag_edit', {'id': tag.id}) }}">{% trans %}edit{% endtrans %}</a>
+                                <a class="btn btn-sm btn-info" href="{{ path('tag_show', {'slug': tag.slug}) }}">voir</a>
+                                <a class="btn btn-sm btn-warning" href="{{ path('tag_edit', {'id': tag.id}) }}">modifier</a>
                             </td>
                             <td>
                                 {{ include('tag/_delete_form.html.twig') }}
@@ -71,13 +79,13 @@
                         </tr>
                         {% else %}
                         <tr>
-                            <td colspan="4">{% trans %}no records found{% endtrans %}</td>
+                            <td colspan="4">Il n'y a aucun enregistrement.</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
 
-                <a class="btn btn-success" href="{{ path('tag_new') }}">{% trans %}Create new ta{% endtrans %}</a>
+                <a class="btn btn-success" href="{{ path('tag_new') }}">Créer un nouveau tag</a>
 
             </div>
             <div class="pagination justify-content-center px-2 mt-4">

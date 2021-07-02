@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}Links index{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : liste des liens web{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -10,12 +10,12 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}Links index{% endtrans %}</h2>
+                <h2>Liste de sliens web</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('admin') }}">Admin</a></li>
-                    <li>{% trans %}Links index{% endtrans %}</li>
+                    <li>Liste des liens web</li>
                 </ol>
             </div>
 
@@ -27,16 +27,38 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row d-flex justify-content-center mb-5">
+
+                {% for message in app.flashes('edited') %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+
+                {% for message in app.flashes('deleted') %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+
                 <div class="col">
-                    <h2>Links index</h2>
+                    <h2>Liste des liens web</h2>
 
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>{% trans %}Title{% endtrans %}</th>
+                                <th>Titre</th>
                                 <th>Url</th>
-                                <th>{% trans %}Presentation{% endtrans %}</th>
+                                <th>Présentation</th>
                                 <th width="9%"></th>
                                 <th width="4%"></th>
                             </tr>
@@ -49,8 +71,8 @@
                                 <td>{{ link.url }}</td>
                                 <td>{{ link.presentation }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-info" href="{{ path('link_show', {'id': link.id}) }}">{% trans %}show{% endtrans %}</a>
-                                    <a class="btn btn-sm btn-warning" href="{{ path('link_edit', {'id': link.id}) }}">{% trans %}edit{% endtrans %}</a>
+                                    <a class="btn btn-sm btn-info" href="{{ path('link_show', {'id': link.id}) }}">voir</a>
+                                    <a class="btn btn-sm btn-warning" href="{{ path('link_edit', {'id': link.id}) }}">modifier</a>
                                 </td>
                                 <td>
                                     {{ include('link/_delete_form.html.twig') }}
@@ -58,13 +80,13 @@
                             </tr>
                             {% else %}
                             <tr>
-                                <td colspan="5">{% trans %}no records found{% endtrans %}</td>
+                                <td colspan="5">Il n'y a aucun enregistrement.</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
 
-                    <a class="btn btn-success" href="{{ path('link_new') }}">{% trans %}Create new link{% endtrans %}</a>
+                    <a class="btn btn-success" href="{{ path('link_new') }}">Créer un nouveau lien</a>
                 </div>
             </div>
             <div class="pagination justify-content-center px-2 mt-4">

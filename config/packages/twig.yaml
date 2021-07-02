@@ -2,32 +2,23 @@ twig:
     default_path: '%kernel.project_dir%/templates'
 
     globals:
-        locales: '%app.locales%'
-        site_name: 'WonderfullBlog'
-        site_name_full: 'My Wonderfull Blog'
-        site_url: 'wonderfullblog.com'
-        site_url_full: 'https://www.wonderfullblog.com'
-        site_mail: 'contact@wonderfullblog.com'
+        #locales: '%app.locales%'
+        site_name: 'citizenz.info'
+        site_name_full: 'Citizenz.info'
+        site_url: 'citizenz.info'
+        site_url_full: 'https://www.citizenz.info'
+        site_mail: 'contact@citizenz.info'
         site_author: 'citizenz7'
-        site_address1: 'A108 Adam Street'
-        site_address_city: 'New York'
-        site_address_code: 'NY 535022'
-        site_address_country: 'United States'
-        site_address_phone: '+1 5589 55488 55'
-        site_version: '1.0.1'
+        site_version: '2.1.1'
         site_year: '2021'
-        site_keywords: 'website, blog, news, info, opensource, linux, windows, apple, smartphone, ios, android, cinema, music'
-        site_presentation: 
-            'Cras fermentum odio eu feugiat lide par naso tierra. 
-            Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        site_keywords: 'blog, citizenz, net, web, sql, php, html, linux, debian, ubuntu, html, css, symfony, laravel, angular, développement, réseau, système, os, exploitation, rss, news, infos, articles, posts, serveur, VPS, dédié, android, libre, windows, sécurité, terminal, console, letsencrypt, HTTPS, phpmyadmin, hébergement, files, nginx, apache, git, github, javascript, jquery, mail, postfix, dovecot, rspamd, rainloop, dkim, spf, dmark, seedbox, rtorrent, rutorrent, ssh, scp, arch, manjaro, xfce, webdav, certbot, mariadb, rsync, sudo'
+        site_presentation: 'Blog d''un geek quinqua nivernais fan d''ovalie, de linuxerie, de musique et de Net'
         github_repo: 'https://github.com/citizenz7/blog'
-        github_url: ''
-        twitter_url: ''
-        facebook_url: ''
-        instagram_url: ''
-        linkedin_url: ''
-        discord_url: ''
+        github_url: 'https://github.com/citizenz7'
+        twitter_url: 'https://twitter.com/citizenz58'
+        facebook_url: 'https://www.facebook.com/o.prieur58/'
+        linkedin_url: 'https://www.linkedin.com/in/olivier-prieur/'
+        discord_url: 'https://discord.gg/neVZtE3'
 
 when@test:
     twig:

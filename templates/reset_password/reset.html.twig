@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}Reset your password{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : réinitialisez votre mot de passe{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -10,11 +10,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}Reset password{% endtrans %}</h2>
+                <h2>Réinitialisez votre mot de passe</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}Reset password{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Réinitialisez votre mot de passe</li>
                 </ol>
             </div>
 
@@ -27,11 +27,11 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h2>{% trans %}Reset your password{% endtrans %}</h2>
+                    <h2>Réinitialisez votre mot de passe</h2>
 
                     {{ form_start(resetForm) }}
                     {{ form_row(resetForm.plainPassword) }}
-                    <button class="btn btn-primary">{% trans %}Reset password{% endtrans %}</button>
+                    <button class="btn btn-primary">Réinitialisez votre mot de passe</button>
                     {{ form_end(resetForm) }}
                 </div>
                 {% block sidebar %}

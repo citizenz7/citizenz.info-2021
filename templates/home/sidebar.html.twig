@@ -2,15 +2,8 @@
 
     <div class="sidebar">
 
-        <h3 class="sidebar-title">{% trans %}Search{% endtrans %}</h3>
+        <h3 class="sidebar-title">Recherche</h3>
         <div class="sidebar-item search-form">
-
-            {#
-            <form action="{{ path('search') }}">
-                <input type="text">
-                <button type="submit"><i class="bi bi-search"></i></button>
-            </form>
-            #}
 
             {{ render(controller(
                 'App\\Controller\\SearchController::searchBar'
@@ -19,7 +12,7 @@
             
         </div><!-- End sidebar search formn-->
 
-        <h3 class="sidebar-title">{% trans %}Categories{% endtrans %}</h3>
+        <h3 class="sidebar-title">Catégories</h3>
         <div class="sidebar-item categories">
             <ul>
                 {% for cat in categoriesAll %}
@@ -33,18 +26,18 @@
             </ul>
         </div><!-- End sidebar categories-->
 
-        <h3 class="sidebar-title">{% trans %}Popular Posts{% endtrans %}</h3>
+        <h3 class="sidebar-title">Articles les + lus</h3>
         <div class="sidebar-item recent-posts">
             {% for a in articles %}
             <div class="post-item clearfix">
-                <img src="../uploads/images/articles/{{ a.image }}" alt="{{ a.title }}" class="img-fluid" style="max-width: 85px; width: 100%;">
+                <img src="../uploads/images/articles/{{ a.image }}" alt="{{ a.title }}" class="img-fluid" style="max-width: 80px; width: 100%;">
                 <h4><a href="{{ path('article_show', {'slug': a.slug}) }}">{{ a.title }}</a> <span class="small badge bg-primary rounded-pill">{{ a.views }}</span></h4>
-                <time datetime="{{ a.created_at|format_datetime('medium', 'short') }}">{% trans %}Posted on{% endtrans %} {{ a.created_at|format_datetime('medium', 'short') }}</time>
+                <time datetime="{{ a.created_at|format_datetime('medium', 'short') }}">{{ a.created_at|format_datetime('medium', 'short') }}</time>
             </div>
             {% endfor %}
         </div>
 
-        <h3 class="sidebar-title">{% trans %}Tags{% endtrans %}</h3>
+        <h3 class="sidebar-title">Tags</h3>
         <div class="sidebar-item tags mb-4">
             <ul>
                 {% for t in tags %}
@@ -55,7 +48,7 @@
             </ul>
         </div><!-- End sidebar tags-->
 
-        <h3 class="sidebar-title">{% trans %}Links{% endtrans %}</h3>
+        <h3 class="sidebar-title">Liens web</h3>
         <div class="sidebar-item mb-4">
             <ul class="list-group list-group-flush text-meta2">
                 {% for l in linksAll %}
@@ -66,20 +59,20 @@
             </ul>
         </div><!-- End sidebar links-->
 
-        <h3 class="sidebar-title">{% trans %}Stats{% endtrans %}</h3>
+        <h3 class="sidebar-title">Stats du site</h3>
         <div class="sidebar-item tags">
             <ul class="list-group list-group-flush text-meta2">
-                <li class="list-group-item d-flex justify-content-between align-items-center">{% trans %}Posts{% endtrans %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">Articles
                     <span class="badge bg-success rounded py-1 px-2 ml-5">
-                        {{ articlesAll | length }}
+                        {{ articlesAllActive | length }}
                     </span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">{% trans %}Comments{% endtrans %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">Commentaires
                     <span class="badge bg-success rounded py-1 px-2 ml-5">
                         {{ commentsAll | length }}
                     </span>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">{% trans %}Views{% endtrans %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">Lectures
                     <span class="badge bg-success rounded py-1 px-2 ml-5">
                         {% for view in views %}
                             {{ view.totalViews | number_format(0, '', ' ') }}

@@ -1,14 +1,13 @@
-<h3>{% trans %}Hi! Please confirm your email!{% endtrans %}</h3>
+<h3>Salut ! Veuillez confirmer votre adresse e-mail !</h3>
 
 <p>
-    {% trans %}Please confirm your email address by clicking the following link{% endtrans %}: <br><br>
-    <a href="{{ signedUrl }}">{% trans %}Confirm my Email{% endtrans %}</a>.
-    {% trans %}This link will expire in{% endtrans %} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.<br>
-    {% trans %}Then please sign-in.{% endtrans %}
+    Merci de confirmer votre adresse e-mail en cliquant sur le lien suivant : <br><br>
+    <a href="{{ signedUrl }}">Confirmer mon e-mail</a>.
+    Attention : ce lien expirera {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.<br>
 </p>
 
 <p>
-    {% trans %}Cheers!{% endtrans %}
+    Cordialement,
 </p>
 <p>
     {{ site_name_full }}

@@ -58,6 +58,7 @@ class LinkController extends AbstractController
             $entityManager->persist($link);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le lien weba été créé avec succès.');
             return $this->redirectToRoute('link_index');
         }
 
@@ -88,6 +89,7 @@ class LinkController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('edited', 'Le commentaire a été modifié avec succès.');
             return $this->redirectToRoute('link_index');
         }
 
@@ -108,6 +110,7 @@ class LinkController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('deleted', 'Le commentaire a été supprimé avec succès.');
         return $this->redirectToRoute('link_index');
     }
 }

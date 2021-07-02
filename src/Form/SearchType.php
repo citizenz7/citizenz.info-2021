@@ -18,7 +18,7 @@ class SearchType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control mb-3',
-                    'placeholder' => 'Your search'
+                    'placeholder' => 'Entrez un ou plusieurs mot-clés'
                 ]
             ])
             ->add('submit', SubmitType::class, [

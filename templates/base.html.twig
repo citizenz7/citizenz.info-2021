@@ -89,8 +89,8 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li><a href="{{ path('about') }}">{% trans %}About{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li><a href="{{ path('about') }}">A propos</a></li>
 
                     <li><a href="{{ path('contact') }}">Contact</a></li>
 
@@ -102,22 +102,23 @@
                             <ul>
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li>
-                                        <a href="{{ path('admin') }}"><span><i class="bi bi-gear-fill"></i> {% trans %}Dashboard{% endtrans %}</span></a>
+                                        <a href="{{ path('admin') }}"><span><i class="bi bi-gear-fill"></i> Dashboard</span></a>
                                     </li>
                                  {% endif %}
                                  <li>
-                                    <a href="{{ path('user_show', {'id': app.user.id}) }}"><span><i class="bi bi-person-circle"></i> {% trans %}Profile{% endtrans %}</span></a>
+                                    <a href="{{ path('user_show', {'id': app.user.id}) }}"><span><i class="bi bi-person-circle"></i> Profil</span></a>
                                 </li>
                                 <li>
-                                    <a class="nav-link scrollto" href="{{ path('app_logout') }}"><span><i class="bi bi-box-arrow-right"></i> {% trans %}Logout{% endtrans %}</span></a>
+                                    <a class="nav-link scrollto" href="{{ path('app_logout') }}"><span><i class="bi bi-box-arrow-right"></i> Déconnexion</span></a>
                                 </li>
                             </ul>
                         </li>
                     {% else %}
-                        <li><a href="{{ path('app_login') }}">{% trans %}Sign in{% endtrans %}</a></li>
-                        <li><a href="{{ path('app_register') }}">{% trans %}Sign up{% endtrans %}</a></li>
+                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                        <li><a href="{{ path('app_register') }}">S'enregistrer</a></li>
                     {% endif %}
 
+                    {#
                     {% for locale in locales %}
                         {% if locale != app.request.locale %}
                             <li>
@@ -125,6 +126,7 @@
                             </li>
                         {% endif %}
                     {% endfor %}
+                    #}
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -142,37 +144,31 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>{% trans %}Useful Links{% endtrans %}</h4>
+                        <h4>Liens</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('terms') }}">{% trans %}Terms of service{% endtrans %}</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('policy') }}">{% trans %}Privacy policy{% endtrans %}</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('disclaimer') }}">{% trans %}Disclaimer{% endtrans %}</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('home') }}">Accueil</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('about') }}">A propos</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ path('terms') }}">CGU</a></li>
                         </ul>
                     </div>
 
-
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        <h4>{% trans %}Contact Us{% endtrans %}</h4>
-                        <p>
-                            {{ site_address1 }}<br>
-                            {{ site_address_city }}, {{ site_address_code }}<br>
-                            {{ site_address_country }}<br>
-                            <strong>{% trans %}Phone{% endtrans %}:</strong> {{ site_address_phone }}<br>
-                            <strong>Email:</strong> {{ site_mail }}<br>
-                        </p>
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Me contacter</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> Email :&nbsp;{{ site_mail }}</li>
+                            <li><i class="bx bx-chevron-right"></i> Discord :&nbsp;<a href="{{ discord_url }}">Serveur citizenz.info</a></li>
+                        </ul>
 
                     </div>
 
                     <div class="col-lg-5 col-md-6 footer-info">
-                        <h3>{% trans %}About{% endtrans %}</h3>
+                        <h3>{{ site_name }}</h3>
                         <p>
                             {{ site_presentation }}
                         </p>
                         <div class="social-links mt-3">
                             <a href="{{ twitter_url }}" class="twitter"><i class="bx bxl-twitter"></i></a>
                             <a href="{{ facebook_url }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="{{ instagram_url }}" class="instagram"><i class="bx bxl-instagram"></i></a>
                             <a href="{{ linkedin_url }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                             <a href="{{ github_url }}" class="github"><i class="bx bxl-github"></i></a>
                             <a href="{{ discord_url }}" class="rss"><i class="bx bxl-discord"></i></a>

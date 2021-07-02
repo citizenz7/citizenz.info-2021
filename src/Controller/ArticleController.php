@@ -12,7 +12,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ArticleController extends AbstractController
 {
@@ -83,6 +82,7 @@ class ArticleController extends AbstractController
             $entityManager->persist($article);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'article a été créé avec succès.');
             return $this->redirectToRoute('article_index');
         }
 
@@ -97,7 +97,7 @@ class ArticleController extends AbstractController
      * @param Article $article
      * @return Response
      */
-    public function show(Article $article, Request $request, EntityManagerInterface $manager, TranslatorInterface $translator): Response
+    public function show(Article $article, Request $request, EntityManagerInterface $manager): Response
     {
         // Set +1 view for each visit
         $read = $article->getViews() +1;
@@ -133,9 +133,7 @@ class ArticleController extends AbstractController
             $em->persist($comment);
             $em->flush();
 
-            $message = $translator->trans('Thank you for you comment!');
-            $this->addFlash('success', $message);
-            
+            $this->addFlash('success', 'Merci pour votre commentaire.');
             return $this->redirectToRoute('article_show', ['slug' => $article->getSlug()]);
         }
 
@@ -186,7 +184,7 @@ class ArticleController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('message', 'Message edited with success!');
+            $this->addFlash('edited', 'Le message a été modifié avec succès.');
             return $this->redirectToRoute('article_index');
         }
 
@@ -215,7 +213,7 @@ class ArticleController extends AbstractController
         $this->getDoctrine()->getManager()->flush();
 
         // Redirect to edit page
-        $this->addFlash('image_delete', 'Article\'s image deleted with success!');
+        $this->addFlash('image_delete', 'L\'image de l\'article a été supprimée avec succès.');
         return $this->redirectToRoute('article_edit', ['id' => $article->getId()]);
     }
 
@@ -243,7 +241,7 @@ class ArticleController extends AbstractController
             $entityManager->flush();
         }
 
-        $this->addFlash('message_delete', 'Message deleted with success!');
+        $this->addFlash('deleted', 'L\'article a été supprimé avec succès.');
         return $this->redirectToRoute('article_index');
     }
 }

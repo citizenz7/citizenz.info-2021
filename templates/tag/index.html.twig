@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}tag index{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : liste des tags{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -13,8 +13,8 @@
                 <h2>Tag</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}Tag index{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Liste des tags</li>
                 </ol>
             </div>
 
@@ -26,7 +26,7 @@
         <div class="container" data-aos="fade-up">
             <div class="row py-5">
                 <div class="col mb-4">
-                    <h1>{% trans %}Tag index{% endtrans %}</h1>
+                    <h2>Liste des tags</h2>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         {% for tag in tags %}
                         <div class="col">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         {% else %}
-                            {% trans %}no records found{% endtrans %}
+                            Il n'y a aucun enregistrement.
                         {% endfor %}
                     </div>
                 </div>

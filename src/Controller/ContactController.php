@@ -27,19 +27,19 @@ class ContactController extends AbstractController
             
             $message = (new Email())
                 ->from($contactFormData['email'])
-                ->to('contact@wonderfullblog.com')
-                ->subject('Message from My Wonderfull Blog')
-                ->html('<h3>Message sent from https://www.wonderfullblog.com</h3>' 
-                    . '<b>From :</b> ' 
+                ->to('contact@contact@citizenz.info')
+                ->subject('Message depuis citizenz.info')
+                ->html('<h3>Message envoyé depuis https://www.citizenz.info</h3>' 
+                    . '<b>Expéditeur :</b> ' 
                     . $contactFormData['name'] . '<br>' 
-                    . '<b>Email :</b> ' 
+                    . '<b>E-mail :</b> ' 
                     . $contactFormData['email'] 
                     . '<br>' . '<b>Message</b> : <p>' 
                     . $contactFormData['message'] . '</p>', 'text/plain');
             
             $mailer->send($message);
 
-            $this->addFlash('successContact', 'Thank you for your message. It has been sent.');
+            $this->addFlash('successContact', 'Votre message a bien été envoyé ! Merci ! Je vous répondrai dès que possible.');
 
             return $this->redirectToRoute('contact');
         }

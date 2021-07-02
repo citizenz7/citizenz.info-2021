@@ -23,6 +23,8 @@ class HomeController extends AbstractController
      */
     public function index(ArticleRepository $repo, Request $request, PaginatorInterface $paginator): Response
     {
+        $request->getSession()->set('_locale', 'fr');
+
         $data_articles = $this->getDoctrine()->getRepository(Article::class)->findBy(['is_active' => true],['created_at' => 'desc']);
         $articles = $paginator->paginate(
             $data_articles,
@@ -35,7 +37,6 @@ class HomeController extends AbstractController
         $tags = $this->getDoctrine()->getRepository(Tag::class)->findBy([],['title' => 'desc']);
 
         return $this->render('home/index.html.twig', [
-            //'controller_name' => 'HomeController',
             'articles' => $articles,
             'categories' => $categories,
             'tags' => $tags

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}Edit Comment{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : modifier le commentaire{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -10,13 +10,13 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}Comment{% endtrans %}</h2>
+                <h2>Commentaire</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('admin') }}">Admin</a></li>
-                    <li><a href="{{ path('comment_admin_index') }}">{% trans %}Comment{% endtrans %}</a></li>
-                    <li>{% trans %}Comment index{% endtrans %}</li>
+                    <li><a href="{{ path('comment_admin_index') }}">Commentaire</a></li>
+                    <li>Liste des commentaire</li>
                 </ol>
             </div>
 
@@ -29,7 +29,7 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h1>{% trans %}Edit Comment{% endtrans %}</h1>
+                    <h2>Modifier le commentaire</h2>
 
                     {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
 

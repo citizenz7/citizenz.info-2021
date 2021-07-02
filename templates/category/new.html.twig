@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}new category{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : créer une nouvelle catégorie{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -10,12 +10,12 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}Category{% endtrans %}</h2>
+                <h2>Catégorie</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('admin') }}">Admin</a></li>
-                    <li>{% trans %}New category{% endtrans %}</li>
+                    <li>Créer une nouvelle catégorie</li>
                 </ol>
             </div>
 
@@ -29,7 +29,7 @@
             <div class="row py-5">
 
                 <div class="col mb-4">
-                    <h1>{% trans %}Create new Category{% endtrans %}</h1>
+                    <h1>Créer une nouvelle catégorie</h1>
 
                     {{ include('category/_form.html.twig') }}
 

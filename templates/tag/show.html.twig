@@ -13,7 +13,7 @@
                 <h2>Tag</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('tag_index') }}">Tag</a></li>
                     <li>{{ tag.title }}</li>
                 </ol>
@@ -30,7 +30,7 @@
                 <div class="col">
                     <h1>{{ tag.title }}</h1>
 
-                    <p>{% trans %}Tag's articles{% endtrans %}</p>
+                    <p>Articles du tag</p>
                     {% for t in tag.article %}
                         <div class="row py-1">
                             <div class="col">

@@ -10,11 +10,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}User{% endtrans %}</h2>
+                <h2>Utilisateur</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}Admin Index{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Admin Index</li>
                 </ol>
             </div>
 
@@ -27,9 +27,9 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h1>{% trans %}Edit User{% endtrans %}</h1>
+                    <h1>Modifier l'utilisateur</h1>
 
-                    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+                    {{ include('user/_form.html.twig', {'button_label': 'Modifier'}) }}
 
                 </div>
             </div>

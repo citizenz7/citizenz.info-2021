@@ -1669,18 +1669,18 @@ section {
 }
 
 .blog .entry .entry-meta ul li + li {
-  padding-left: 20px;
+  padding-left: 18px;
 }
 
 .blog .entry .entry-meta i {
   font-size: 16px;
-  margin-right: 8px;
+  margin-right: 6px;
   line-height: 0;
 }
 
 .blog .entry .entry-meta a {
   color: #777777;
-  font-size: 14px;
+  font-size: 13px;
   display: inline-block;
   line-height: 1;
 }

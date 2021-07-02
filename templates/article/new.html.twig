@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}new articles{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }}: créer un nouvelarticle{% endblock %}
 
 {% block stylesheets %}
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
                 <h2>Blog</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li>Admin Index</li>
                 </ol>
             </div>
@@ -31,7 +31,7 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h2>{% trans %}Create new Article{% endtrans %}</h2>
+                    <h2>Créer un nouvel article</h2>
 
                     {{ include('article/_form.html.twig') }}
 

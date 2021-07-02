@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}New Tag{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : créer un tag{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -13,8 +13,8 @@
                 <h2>Tag</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}Admin Index{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Admin Index</li>
                 </ol>
             </div>
 
@@ -27,7 +27,7 @@
 
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
-                    <h1>{% trans %}Create new Tag{% endtrans %}</h1>
+                    <h2>Créer un nouveau tag</h2>
 
                     {{ include('tag/_form.html.twig') }}
 

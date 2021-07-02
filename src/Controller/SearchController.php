@@ -33,10 +33,10 @@ class SearchController extends AbstractController
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Search'
+                    'placeholder' => 'Entrez un mot-clé'
                 ]
             ])
-            ->add('search', SubmitType::class, [
+            ->add('recherche', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]
@@ -60,40 +60,8 @@ class SearchController extends AbstractController
             $articles = $repo->findArticlesByName($query);
         }
 
-        //dd($articles);
-        //dd($request->request->get('form')['query']);
-
         return $this->render('search/index.html.twig', [
             'articles' => $articles
         ]);
     }
-
-
-    /*
-    public function index(Request $request, ArticleRepository $repo, PaginatorInterface $paginator): Response
-    {
-        $searchForm = $this->createForm(SearchType::class);
-        $searchForm->handleRequest($request);
-
-        $data = $repo->findArticles();
-
-        if ($searchForm->isSubmitted() && $searchForm->isValid())
-        {
-            $title = $searchForm->getData()->getTitle();
-            $data = $repo->search($title);
-        }
-
-        $articles = $paginator->paginate(
-            $data, // Doctrine Query, not results
-            $request->query->getInt('page', 1), // Define the page parameter
-            10 // Items per page
-        );
-
-        return $this->render('search/index.html.twig', [
-            //'controller_name' => 'SearchController',
-            'articles' => $articles,
-            'searchForm' => $searchForm->createView()
-        ]);
-    }
-    */
 }

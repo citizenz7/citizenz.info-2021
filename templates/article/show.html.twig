@@ -13,8 +13,8 @@
                 <h2>Blog</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}article{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Articles</li>
                     <li>{{ article.title }}</li>
                 </ol>
             </div>
@@ -54,26 +54,29 @@
                                     <a href="">{{ article.author }}</a>
                                 </li>
                                 <li class="d-flex align-items-center">
-                                    <i class="bi bi-clock"></i>
+                                    <i class="bi bi-calendar"></i>
                                     <a href="">{{ article.createdAt|format_datetime('medium', 'short') }}</a>
                                 </li>
+                                {% if article.updatedAt %}
+                                    <li class="d-flex align-items-center"><i class="bi bi-arrow-counterclockwise"></i> <a href="">{{ article.updatedAt|format_datetime('medium', 'short') }}</a></li>
+                                {% endif %}
                                 <li class="d-flex align-items-center">
                                     <i class="bi bi-chat-dots"></i>
                                     {% if (article.comment|length) <= 1  %}
-                                        <a href="">{{ article.comment|length }} {% trans %}Comment{% endtrans %}</a>
+                                        <a href="">{{ article.comment|length }} commentaire</a>
                                     {% else %}
-                                        <a href="">{{ article.comment|length }} {% trans %}Comments{% endtrans %}</a>
+                                        <a href="">{{ article.comment|length }} commentaires</a>
                                     {% endif %}
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <i class="bi bi-eye"></i>
-                                    <a href="">{{ article.views }} {% trans %}views{% endtrans %}</a>
+                                    <a href="">{{ article.views }} lectures</a>
                                 </li>
                             </ul>
                             <ul class="mt-2">
                                 <li class="d-flex align-items-center">
                                     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="cjDMoHtB"></script>
-                                    <div class="fb-share-button" data-href="{{ article.slug }}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ article.slug }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">{% trans %}Share{% endtrans %}</a></div>
+                                    <div class="fb-share-button" data-href="{{ article.slug }}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ article.slug }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <div class="mt-2">
@@ -83,7 +86,7 @@
                                 </li>
                                 {% if is_granted('ROLE_ADMIN') %}
                                     <li class="d-flex align-items-center">
-                                        <a class="btn btn-warning text-dark" href="{{ path('article_edit', {'id': article.id}) }}">{% trans %}Update{% endtrans %}</a>
+                                        <a class="btn btn-warning text-dark" href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
                                     </li>
                                     <li class="d-flex align-items-center">
                                         {{ include('article/_delete_form.html.twig') }}
@@ -117,7 +120,7 @@
                     <div class="blog-author d-flex align-items-center">
                         <img src="../uploads/images/users/{{ article.author.image }}" class="rounded-circle float-start" style="max-width: 100px; width: 100%;" alt="{{ article.author.username }}">
                         <div>
-                            <h5>{% trans %}Posted by{% endtrans %} {{ article.author.username }}</h5>
+                            <h5>Posté par {{ article.author.username }}</h5>
                             <div class="social-links">
                                 {% if article.author.twitter %}
                                 <a href="{{ article.author.twitter }}"><i class="bi bi-twitter"></i></a>
@@ -148,9 +151,9 @@
 
                         <h4 class="comments-count">
                             {% if article.comment|length >= 2 %}
-                            {{ article.comment|length }} {% trans %}comments{% endtrans %}
+                                {{ article.comment|length }} commentaires
                             {% else %}
-                            {{ article.comment|length }} {% trans %}comment{% endtrans %}
+                                {{ article.comment|length }} commentaire
                             {% endif %}
                         </h4>
 
@@ -164,7 +167,7 @@
                                     <h5>
                                         {{ comment.nickname }}
                                         <a href="#reply-comment" data-reply data-id={{ comment.id }} class="reply">
-                                            <i class="bi bi-reply-fill"></i> {% trans %}Reply{% endtrans %}
+                                            <i class="bi bi-reply-fill"></i> Répondre
                                         </a>
                                     </h5>
                                     <time datetime="{{ comment.createdAt|format_datetime('medium', 'short') }}">
@@ -203,15 +206,15 @@
                         {% endfor %}
 
                         <div id="reply-comment" class="reply-form mt-5">
-                            <h4>{% trans %}Leave a Reply{% endtrans %}</h4>
-                            <p>{% trans %}Your email address will not be published.{% endtrans %}</p>
+                            <h4>Laisser un commentaire</h4>
+                            <p>Votre adresse email ne sera pas publiée.</p>
                             {{ form_start(commentForm) }}
                                 {#{ form_widget(commentForm) }#}
-                                {% trans %}Email{% endtrans %}:<br>
+                                Email:<br>
                                 {{ form_row(commentForm.email, {'label': false}) }}
-                                {% trans %}Name{% endtrans %}:<br>
+                                Pseudo:<br>
                                 {{ form_row(commentForm.nickname, {'label': false}) }}
-                                {% trans %}Content{% endtrans %}:<br>
+                                Message:<br>
                                 {{ form_row(commentForm.content, {'label': false}) }}
                                 <table class="mb-3">
                                     <tr>
@@ -219,15 +222,15 @@
                                             {{ form_row(commentForm.rgpd, {'label': false}) }}
                                         </td>
                                         <td>
-                                            {% trans %}Agree terms of service{% endtrans %}
+                                            Accepter les CGU
                                         </td>
                                     </tr>
                                 </table>
-                                {% trans %}Copy antispam code{% endtrans %}:<br>
+                                Recopiez le code antispam:<br>
                                 {{ form_row(commentForm.captcha, {'label': false}) }}
                                 <div class="mt-2">
-                                    <button class="btn btn-sm btn-success">{% trans %}Send message{% endtrans %}</button>
-                                    <button class="btn btn-sm btn-secondary" type="reset">{% trans %}Reset{% endtrans %}</button>
+                                    <button class="btn btn-sm btn-success">Envoyer le message</button>
+                                    <button class="btn btn-sm btn-secondary" type="reset">Annuler</button>
                                 </div>
                             {{ form_end(commentForm) }}
                         </div>

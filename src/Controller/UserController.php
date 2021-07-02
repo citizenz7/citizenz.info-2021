@@ -57,6 +57,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
+            $this->addFlash('success', 'L\'utilisateur a été créé avec succès.');
             return $this->redirectToRoute('user_index');
         }
 
@@ -108,7 +109,7 @@ class UserController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            $this->addFlash('message', 'User edited with success!');
+            $this->addFlash('edited', 'L\'utilisateur a été modifié avec succès.');
             return $this->redirectToRoute('user_show', ['id' => $user->getId()]);
         }
 
@@ -141,6 +142,7 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
+        $this->addFlash('deleted', 'L\'utilisateur a été supprimé avec succès.');
         return $this->redirectToRoute('user_index');
     }
 }

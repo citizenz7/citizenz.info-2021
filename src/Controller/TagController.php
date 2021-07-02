@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 class TagController extends AbstractController
 {
@@ -66,6 +65,7 @@ class TagController extends AbstractController
             $entityManager->persist($tag);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le tag a été créé avec succès.');
             return $this->redirectToRoute('tag_index');
         }
 
@@ -106,7 +106,7 @@ class TagController extends AbstractController
      * @param Tag $tag
      * @return Response
      */
-    public function edit(Request $request, Tag $tag, TranslatorInterface $translator): Response
+    public function edit(Request $request, Tag $tag): Response
     {
         $form = $this->createForm(TagType::class, $tag);
         $form->handleRequest($request);
@@ -114,9 +114,7 @@ class TagController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            $message = $translator->trans('Tag edited with success!');
-            $this->addFlash('message', $message);
-            
+            $this->addFlash('edited', 'Le tag a été édité avec succès.');
             return $this->redirectToRoute('tag_admin_index');
         }
 
@@ -140,7 +138,7 @@ class TagController extends AbstractController
             $entityManager->flush();
         }
 
-        $this->addFlash('message_deleted', 'Tag deleted with success!');
+        $this->addFlash('deleted', 'Le tag a été supprimé avec succès.');
         return $this->redirectToRoute('tag_index');
     }
 }

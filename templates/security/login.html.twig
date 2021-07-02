@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ site_name }}: {% trans %}Log in!{% endtrans %}{% endblock %}
+{% block title %}{{ site_name }} : connexion{% endblock %}
 
 {% block body %}
 <main id="main">
@@ -10,11 +10,11 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>{% trans %}Sign-in{% endtrans %}</h2>
+                <h2>Connexion</h2>
 
                 <ol>
-                    <li><a href="{{ path('home') }}">{% trans %}Home{% endtrans %}</a></li>
-                    <li>{% trans %}Sign-in{% endtrans %}</li>
+                    <li><a href="{{ path('home') }}">Accueil</a></li>
+                    <li>Connexion</li>
                 </ol>
             </div>
 
@@ -38,23 +38,23 @@
 
                         {% if app.user %}
                             <div class="mb-3">
-                                {% trans %}You are logged in as{% endtrans %} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a>
+                                Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
                             </div>
                         {% endif %}
 
-                        <h1 class="h3 mb-3 font-weight-normal">{% trans %}Please sign in{% endtrans %}</h1>
+                        <h1 class="h3 mb-3 font-weight-normal">Veuillez vous connecter</h1>
                         <input type="email" value="{{ last_username }}" name="email" class="form-control mb-3" autocomplete="email" placeholder="Email" required autofocus>
-                        <input type="password" name="password" class="form-control mb-3" autocomplete="current-password" placeholder="{% trans %}Password{% endtrans %}" required>
+                        <input type="password" name="password" class="form-control mb-3" autocomplete="current-password" placeholder="Mot de passe" required>
 
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                         <div class="text-center my-3">
-                            {% trans %}Password lost?{% endtrans %} <a href="{{ path('app_forgot_password_request') }}">{% trans %}Reset your password{% endtrans %}</a>
+                            Mot de passe perdu ? <a href="{{ path('app_forgot_password_request') }}">Réinitialisez votre mot d epasse</a>
                         </div>
 
                         <div class="d-grid gap-2 mt-3">
-                            <button class="btn btn-primary" type="submit">{% trans %}Sign in{% endtrans %}</button> 
-                            <button class="btn btn-secondary" type="reset">{% trans %}Reset{% endtrans %}</button>
+                            <button class="btn btn-primary" type="submit">Connexion</button> 
+                            <button class="btn btn-secondary" type="reset">Annuler</button>
                         </div>
                     </form>
                 </div>
