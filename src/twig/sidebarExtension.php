@@ -90,6 +90,7 @@ class sidebarExtension extends AbstractExtension
         $views = $this->articleRepository->totalViews();
         $tags = $this->tagRepository->findAll();
         $commentsAll = $this->commentRepository->findAll();
+        $lastComments = $this->commentRepository->lastComments();
         $linksAll = $this->linkRepository->findAll();
 
         // return $this->twig->render('home/sidebar.html.twig', [
@@ -104,7 +105,7 @@ class sidebarExtension extends AbstractExtension
 
         try {
             return $this->twig->render('home/sidebar.html.twig',
-                compact('articles', 'articlesAll', 'categories', 'categoriesAll', 'users', 'views', 'tags', 'commentsAll', 'linksAll', 'articlesAllActive'));
+                compact('articles', 'articlesAll', 'categories', 'categoriesAll', 'users', 'views', 'tags', 'commentsAll', 'lastComments', 'linksAll', 'articlesAllActive'));
         } catch (LoaderError | RuntimeError | SyntaxError $e) {
         }
     }

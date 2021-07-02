@@ -147,7 +147,7 @@
                         </div>
                     </div><!-- End blog author bio -->
 
-                    <div class="blog-comments">
+                    <div id="comments" class="blog-comments">
 
                         <h4 class="comments-count">
                             {% if article.comment|length >= 2 %}
@@ -160,48 +160,48 @@
                         <!-- Comments -->
                         {% for comment in article.comment %}
 
-                        {% if comment.parent == null %}
-                        <div class="comment">
-                            <div class="d-flex">
-                                <div class="border px-3 pt-3">
-                                    <h5>
-                                        {{ comment.nickname }}
-                                        <a href="#reply-comment" data-reply data-id={{ comment.id }} class="reply">
-                                            <i class="bi bi-reply-fill"></i> Répondre
-                                        </a>
-                                    </h5>
-                                    <time datetime="{{ comment.createdAt|format_datetime('medium', 'short') }}">
-                                        {{ comment.createdAt|format_datetime('medium', 'short') }}
-                                    </time>
-                                    <p>
-                                        {{ comment.content|raw }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {# show reply #}
-                        {% for reply in comment.replie %}
-                        <div class="comment comment-reply">
-                            <div class="d-flex">
-                                <div class="border px-3 pt-3">
-                                    <h5>
-                                        {{ reply.nickname }}
-                                    </h5>
-                                    <div>
-                                        <time datetime="{{ reply.createdAt|format_datetime('medium', 'short') }}">
-                                            {{ reply.createdAt|format_datetime('medium', 'short') }}
+                            {% if comment.parent == null %}
+                            <div class="comment">
+                                <div class="d-flex">
+                                    <div class="border px-3 pt-3">
+                                        <h5>
+                                            {{ comment.nickname }}
+                                            <a href="#reply-comment" data-reply data-id={{ comment.id }} class="reply">
+                                                <i class="bi bi-reply-fill"></i> Répondre
+                                            </a>
+                                        </h5>
+                                        <time datetime="{{ comment.createdAt|format_datetime('medium', 'short') }}">
+                                            {{ comment.createdAt|format_datetime('medium', 'short') }}
                                         </time>
+                                        <p>
+                                            {{ comment.content|raw }}
+                                        </p>
                                     </div>
-                                    <p>
-                                        {{ reply.content|raw }}
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        {% endfor %}
 
-                        {% endif %}
+                                {# show reply #}
+                                {% for reply in comment.replie %}
+                                <div class="comment comment-reply">
+                                    <div class="d-flex">
+                                        <div class="border px-3 pt-3">
+                                            <h5>
+                                                {{ reply.nickname }}
+                                            </h5>
+                                            <div>
+                                                <time datetime="{{ reply.createdAt|format_datetime('medium', 'short') }}">
+                                                    {{ reply.createdAt|format_datetime('medium', 'short') }}
+                                                </time>
+                                            </div>
+                                            <p>
+                                                {{ reply.content|raw }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            {% endif %}
 
                         {% endfor %}
 

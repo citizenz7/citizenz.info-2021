@@ -10,7 +10,7 @@
             )) }}
 
             
-        </div><!-- End sidebar search formn-->
+        </div><!-- End sidebar search formn -->
 
         <h3 class="sidebar-title">Catégories</h3>
         <div class="sidebar-item categories">
@@ -24,7 +24,7 @@
                 </li>
                 {% endfor %}
             </ul>
-        </div><!-- End sidebar categories-->
+        </div><!-- End sidebar categories -->
 
         <h3 class="sidebar-title">Articles les + lus</h3>
         <div class="sidebar-item recent-posts">
@@ -35,7 +35,21 @@
                 <time datetime="{{ a.created_at|format_datetime('medium', 'short') }}">{{ a.created_at|format_datetime('medium', 'short') }}</time>
             </div>
             {% endfor %}
-        </div>
+        </div><!-- End sidebar articles -->
+
+        <h3 class="sidebar-title">Derniers commentaires</h3>
+        <div class="sidebar-item recent-posts">
+            {% for c in lastComments %}
+                <div class="post-item clearfix small">
+                    <i class="bi bi-chat-right-dots-fill"></i> 
+                    <a href="{{ path('article_show', { 'slug': c.slug }) }}#comments" class="text-dark">
+                        {{ c.content|slice(0,50) }}..., 
+                        par {{ c.nickname }}, 
+                        le {{ c.created_at|format_datetime('short', 'none', locale='fr') }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div><!-- End sidebar comments -->
 
         <h3 class="sidebar-title">Tags</h3>
         <div class="sidebar-item tags mb-4">
@@ -46,7 +60,7 @@
                 </li>
                 {% endfor %}
             </ul>
-        </div><!-- End sidebar tags-->
+        </div><!-- End sidebar tags -->
 
         <h3 class="sidebar-title">Liens web</h3>
         <div class="sidebar-item mb-4">
