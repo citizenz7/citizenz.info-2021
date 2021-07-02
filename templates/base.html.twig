@@ -84,50 +84,14 @@
                         <span>{{ site_name }}</span>
                     </a>
                 </h1>
-                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
 
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="{{ path('home') }}">Accueil</a></li>
                     <li><a href="{{ path('about') }}">A propos</a></li>
-
                     <li><a href="{{ path('contact') }}">Contact</a></li>
-
-                    {% if app.user %}
-                        <li class="dropdown">
-                            <a href="{{ path('user_show', {'id': app.user.id}) }}">
-                                <span><i class="bi bi-person-circle"></i> {{ app.user.username }} <i class="bi bi-chevron-down"></i></span>
-                            </a>
-                            <ul>
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <li>
-                                        <a href="{{ path('admin') }}"><span><i class="bi bi-gear-fill"></i> Dashboard</span></a>
-                                    </li>
-                                 {% endif %}
-                                 <li>
-                                    <a href="{{ path('user_show', {'id': app.user.id}) }}"><span><i class="bi bi-person-circle"></i> Profil</span></a>
-                                </li>
-                                <li>
-                                    <a class="nav-link scrollto" href="{{ path('app_logout') }}"><span><i class="bi bi-box-arrow-right"></i> Déconnexion</span></a>
-                                </li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                        <li><a href="{{ path('app_register') }}">S'enregistrer</a></li>
-                    {% endif %}
-
-                    {#
-                    {% for locale in locales %}
-                        {% if locale != app.request.locale %}
-                            <li>
-                                <a href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{ asset('img/'~locale~'.png') }}" alt="{{ locale }}"></a> 
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                    #}
-
+                    <li><a href="{{ path('terms') }}">CGU</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->

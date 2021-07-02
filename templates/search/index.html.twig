@@ -39,8 +39,7 @@
                                     <a href="{{ path('article_show', {'slug': article.slug}) }}">
                                         <h6 class="text-dark"><i class="bi bi-arrow-down-right-square-fill text-primary"></i> {{ article.title }}</h6>
                                         <div class="text-dark small p-1 rounded">
-                                            Posté le {{ article.createdAt|format_datetime('medium', 'short') }} 
-                                            Par {{ article.author }}
+                                            Posté le {{ article.createdAt|format_datetime('medium', 'short') }} par {{ article.author }}
                                         </div>
                                     </a>
                                 </div>

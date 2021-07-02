@@ -5,6 +5,7 @@ twig:
         #locales: '%app.locales%'
         site_name: 'citizenz.info'
         site_name_full: 'Citizenz.info'
+        site_slogan: 'Citizenz.info : blog geek & libre'
         site_url: 'citizenz.info'
         site_url_full: 'https://www.citizenz.info'
         site_mail: 'contact@citizenz.info'
