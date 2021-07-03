@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>{% block title %}{{ site_name }}{% endblock %}</title>
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <title>{% block title %}{{ site_slogan }}{% endblock %}</title>
     <meta content="{{ site_presentation }}" name="description">
     <meta content="{{ site_keywords }}" name="keywords">
+	<link rel="canonical" href="https://www.citizenz.info/" />
     <meta name="author" content="citizenz">
     <meta name="generator" content="Symfony 5">
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="Citizenz.info &raquo; Flux" href="https://www.citizenz.info/rss" />
 
     <!-- search engines -->
     <meta name="description" content="{{ site_presentation }}">
@@ -34,8 +39,8 @@
     <meta name="og:image" content="{{ site_url_full }}/img/logo.png">
     <meta name="og:url" content="{{ site_url_full }}">
     <meta name="og:site_name" content="{{ site_name_full }}">
-    <meta name="og:locale" content="en_EN">
-    <meta name="fb:app_id" content="TO_DO">
+    <meta name="og:locale" content="fr_FR">
+    <meta name="fb:app_id" content="341486105869923">
     <meta name="og:type" content="website">
 
     <!-- Favicons -->
@@ -148,6 +153,9 @@
         <div class="container">
             <div class="copyright">
                 <strong><span>{{ site_name }}</span></strong> {{ site_year }} - Some rights reserved <a href="https://www.gnu.org/licenses/gpl-3.0.fr.html" target="_blank">GPLv3</a>
+            </div>
+            <div class="credits fst-italic font-monospace">
+                {{ site_kaamelott1 }}
             </div>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->

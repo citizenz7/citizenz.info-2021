@@ -29,7 +29,6 @@
             <div class="row d-flex justify-content-center mb-5">
                 <div class="col">
                     <h1>{{ tag.title }}</h1>
-
                     <p>Articles du tag</p>
                     {% for t in tag.article %}
                         <div class="row py-1">
@@ -38,8 +37,10 @@
                             </div>
                         </div>
                     {% endfor %}
-
                 </div>
+                {% block sidebar %}
+                    {{ sidebar() }}
+                {% endblock %}
             </div>
         </div>
     </section>

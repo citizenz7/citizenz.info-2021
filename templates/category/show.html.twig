@@ -25,12 +25,9 @@
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-
             <div class="row py-5">
-
                 <div class="col mb-4">
                     <h2>{{ category.title }}</h2>
-
                     <p>Articles de la catégorie</p>
                     {% for c in category.articles %}
                         <div class="row py-1">
@@ -39,10 +36,11 @@
                             </div>
                         </div>
                     {% endfor %}
-
                 </div>
+                {% block sidebar %}
+                    {{ sidebar() }}
+                {% endblock %}
             </div>
-
         </div>
     </section>
 

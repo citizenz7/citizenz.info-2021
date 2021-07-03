@@ -14,6 +14,7 @@ twig:
         site_year: '2021'
         site_keywords: 'blog, citizenz, net, web, sql, php, html, linux, debian, ubuntu, html, css, symfony, laravel, angular, développement, réseau, système, os, exploitation, rss, news, infos, articles, posts, serveur, VPS, dédié, android, libre, windows, sécurité, terminal, console, letsencrypt, HTTPS, phpmyadmin, hébergement, files, nginx, apache, git, github, javascript, jquery, mail, postfix, dovecot, rspamd, rainloop, dkim, spf, dmark, seedbox, rtorrent, rutorrent, ssh, scp, arch, manjaro, xfce, webdav, certbot, mariadb, rsync, sudo'
         site_presentation: 'Blog d''un geek quinqua nivernais fan d''ovalie, de linuxerie, de musique et de Net'
+        site_kaamelott1: 'Le code c''est "le code" ? Ça va, ils se sont pas trop cassé le bonnet, pour l''trouver celui-là ! (Kaamelott, Livre III, Poltergeist)'
         github_repo: 'https://github.com/citizenz7/blog'
         github_url: 'https://github.com/citizenz7'
         twitter_url: 'https://twitter.com/citizenz58'
