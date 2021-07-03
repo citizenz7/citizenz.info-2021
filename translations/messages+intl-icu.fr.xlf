@@ -117,6 +117,18 @@
             <source>Url</source>
             <target>Url</target>
         </trans-unit>
+        <trans-unit id="2CwrYE7" resname="Dashboard">
+            <source>Dashboard</source>
+            <target>Dashboard</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE8" resname="Profil">
+            <source>Profil</source>
+            <target>Profil</target>
+        </trans-unit>
+        <trans-unit id="2CwrYE9" resname="Déconnexion">
+            <source>Déconnexion</source>
+            <target>Déconnexion</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

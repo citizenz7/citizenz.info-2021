@@ -10,6 +10,7 @@ twig:
         site_url_full: 'https://www.citizenz.info'
         site_mail: 'contact@citizenz.info'
         site_author: 'citizenz7'
+        site_author_name: 'Olivier Prieur'
         site_version: '2.1.1'
         site_year: '2021'
         site_keywords: 'blog, citizenz, net, web, sql, php, html, linux, debian, ubuntu, html, css, symfony, laravel, angular, développement, réseau, système, os, exploitation, rss, news, infos, articles, posts, serveur, VPS, dédié, android, libre, windows, sécurité, terminal, console, letsencrypt, HTTPS, phpmyadmin, hébergement, files, nginx, apache, git, github, javascript, jquery, mail, postfix, dovecot, rspamd, rainloop, dkim, spf, dmark, seedbox, rtorrent, rutorrent, ssh, scp, arch, manjaro, xfce, webdav, certbot, mariadb, rsync, sudo'

@@ -40,13 +40,10 @@
         <h3 class="sidebar-title">Derniers commentaires</h3>
         <div class="sidebar-item recent-posts">
             {% for c in lastComments %}
-                <div class="post-item clearfix small">
-                    <i class="bi bi-chat-right-dots-fill"></i> 
-                    <a href="{{ path('article_show', { 'slug': c.slug }) }}#comments" class="text-dark">
-                        {{ c.content|slice(0,50) }}..., 
-                        par {{ c.nickname }}, 
-                        le {{ c.created_at|format_datetime('short', 'none', locale='fr') }}
-                    </a>
+                <div class="post-item clearfix sidebar-title-comments">
+                    <i class="bi bi-chat-left-text me-2 lead float-start"></i> 
+                    <a href="{{ path('article_show', { 'slug': c.slug }) }}#comments" class="small">{{ c.content|slice(0,50) }}...</a>
+                    <span class="small">, par {{ c.nickname }}, le {{ c.created_at|format_datetime('short', 'none', locale='fr') }}</span>
                 </div>
             {% endfor %}
         </div><!-- End sidebar comments -->

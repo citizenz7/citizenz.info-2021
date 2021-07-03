@@ -2071,6 +2071,7 @@ section {
 
 .blog .sidebar .recent-posts .post-item + .post-item {
   margin-top: 15px;
+  text-align: justify;
 }
 
 .blog .sidebar .recent-posts img {
@@ -2092,6 +2093,21 @@ section {
 .blog .sidebar .recent-posts h4 a:hover {
   color: #68A4C4;
 }
+
+.sidebar-title-comments a {
+  font-weight: bold;
+  color: #1e4356;
+  transition: 0.3s;
+}
+
+.sidebar-title-comments a:hover {
+  color: #68A4C4;
+}
+
+.sidebar-title-comments span {
+  color: #aaaaaa;
+}
+
 
 .blog .sidebar .recent-posts time {
   display: block;

@@ -37,15 +37,15 @@
 
 
                     <div class="card px-3 pt-3 pb-2 mb-4">
-                        <p class="lead">
+                        <p class="lead px-3">
                             <img src="{{ asset('img/contact.png') }}" alt="Contact" class="img-fluid float-start me-5">
                             <span class="fs-1 fw-bold">Me contacter</span>
-                            <br><br>
+                            <br>
                             Chers lecteurs,
                             <br>
-                            Merci d'utiliser le formulaire ci-dessous pour em contacter. 
+                            Merci d'utiliser le formulaire ci-dessous pour me contacter. 
                             Je vous répondrai dès que possible.
-                            <span class="small fst-italic d-flex justify-content-end mt-3">{{ site_name_full }}</span>
+                            <span class="small fst-italic d-flex justify-content-end mt-5">{{ site_author }}</span>
                         </p>
                     </div>
 
@@ -65,8 +65,8 @@
                         Merci de recopier le code antispam : 
                         {{ form_row(our_form.captcha, {'label': false}) }}
                         <div class="mt-4">
-                            <button type="submit" class="btn btn-primary mr-3 mb-4">Envoyer le message</button>
-                            <button type="reset" class="btn btn-secondary mb-4">Annuler</button>
+                            <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                            <button type="reset" class="btn btn-secondary">Annuler</button>
                         </div>
                     {{ form_end(our_form) }}
 
