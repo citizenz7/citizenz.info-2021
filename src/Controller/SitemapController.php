@@ -23,10 +23,11 @@ class SitemapController extends AbstractController
 
         // On ajoute les URLs "statiques"
         $urls[] = ['loc' => $this->generateUrl('home')];
-        $urls[] = ['loc' => $this->generateUrl('app_register')];
-        $urls[] = ['loc' => $this->generateUrl('app_login')];
+        //$urls[] = ['loc' => $this->generateUrl('app_register')];
+        //$urls[] = ['loc' => $this->generateUrl('app_login')];
         $urls[] = ['loc' => $this->generateUrl('about')];
         $urls[] = ['loc' => $this->generateUrl('contact')];
+        $urls[] = ['loc' => $this->generateUrl('terms')];
 
         // add dynamic urls, like blog posts from your DB
         foreach ($this->getDoctrine()->getRepository(Article::class)->findAll() as $article) {
@@ -41,7 +42,7 @@ class SitemapController extends AbstractController
                 'loc' => $this->generateUrl('article_show', [
                     'slug' => $article->getSlug(),
                 ]),
-                'lastmod' => $article->getUpdatedAt()->format('Y-m-d'),
+                //'lastmod' => $article->getUpdatedAt()->format('Y-m-d'),
                 'image' => $images
             ];
         }

@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $articles = $paginator->paginate(
             $data_articles,
             $request->query->getInt('page', 1),
-            3
+            4
         );
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findBy([],['title' => 'desc']);
