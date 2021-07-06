@@ -34,6 +34,7 @@ class SearchController extends AbstractController
                 ]
             ])
             ->add('recherche', SubmitType::class, [
+                'label' => '🔎',
                 'attr' => [
                     'class' => 'btn btn-primary'
                 ]

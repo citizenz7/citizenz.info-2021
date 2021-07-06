@@ -6,14 +6,12 @@ use App\Entity\Article;
 use App\Entity\Comment;
 use App\Form\ArticleType;
 use App\Form\CommentType;
-use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
 
 class ArticleController extends AbstractController
 {
@@ -99,7 +97,7 @@ class ArticleController extends AbstractController
      * @param Article $article
      * @return Response
      */
-    public function show(Article $article, Request $request, EntityManagerInterface $manager, MailerInterface $mailer): Response
+    public function show(Article $article, Request $request, EntityManagerInterface $manager): Response
     {
         // Set +1 view for each visit
         $read = $article->getViews() +1;
