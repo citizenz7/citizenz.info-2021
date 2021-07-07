@@ -55,9 +55,9 @@
                                         <div class="row">
                                             <div class="col d-flex justify-content-center align-items-center">
                                                 {% if user.image %}
-                                                    <img src="../uploads/images/users/{{ user.image }}" alt="{{ user.username }}" class="img-fluid" style="max-width: 150px; width: 100%;">
+                                                    <img src="{{ asset('uploads/images/users/' ~ user.image)|imagine_filter('user') }}" alt="{{ user.username }}" class="img-fluid">
                                                 {% else %}
-                                                    <img src="{{ asset('img/no-image.png') }}" alt="{{ user.username }}" class="img-fluid" style="max-width: 150px; width: 100%;">
+                                                    <img src="{{ asset('img/no-image.png')|imagine_filter('user') }}" alt="{{ user.username }}" class="img-fluid">
                                                 {% endif %}
                                             </div>
                                         </div>
