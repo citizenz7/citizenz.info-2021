@@ -195,3 +195,7 @@ modules.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm,phpstorm+all
 
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###

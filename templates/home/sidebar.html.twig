@@ -30,7 +30,7 @@
         <div class="sidebar-item recent-posts">
             {% for a in articles %}
             <div class="post-item clearfix">
-                <img src="../uploads/images/articles/{{ a.image }}" alt="{{ a.title }}" class="img-fluid" style="max-width: 80px; width: 100%;">
+                <img src="{{ asset('uploads/images/articles/' ~ a.image)|imagine_filter('sidebar') }}" alt="{{ a.title }}" class="img-fluid">
                 <h4><a href="{{ path('article_show', {'slug': a.slug}) }}">{{ a.title }}</a> <span class="small badge bg-primary rounded-pill">{{ a.views }}</span></h4>
                 <time datetime="{{ a.created_at|format_datetime('medium', 'short') }}">{{ a.created_at|format_datetime('medium', 'short') }}</time>
             </div>

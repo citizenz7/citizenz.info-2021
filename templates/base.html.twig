@@ -6,7 +6,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99601233-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-99601233-1');
@@ -14,11 +17,36 @@
 
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    {% if article is defined %}
+    
+    <title>{{ article.title }}</title>
+    <link rel="canonical" href="{{ site_url_full }}/article/{{ article.slug }}" />
+
+    <meta name="title" content="{{ article.title }}">
+    <meta name="description" content="{{ article.title}}" />
+
+    <meta property="og:url" content="{{ site_url_full }}/article/{{ article.slug }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ article.title }}" />
+    <meta property="og:description" content="{{ article.title }}" />
+    <meta property="og:image" content="{{ asset('uploads/images/articles/' ~ article.image)|imagine_filter('pano') }}" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="768" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ site_url_full }}">
+    <meta name="twitter:creator" content="{{ site_author }}">
+    <meta name="twitter:title" content="{{ article.title }}">
+    <meta name="twitter:description" content="{{ article.title }}">
+    <meta name="twitter:image" content="{{ asset('uploads/images/articles/' ~ article.image)|imagine_filter('pano') }}">
+
+    {% else %}
     <title>{% block title %}{{ site_slogan }}{% endblock %}</title>
     <meta content="{{ site_presentation }}" name="description">
     <meta content="{{ site_keywords }}" name="keywords">
-	<link rel="canonical" href="https://www.citizenz.info/" />
+    <link rel="canonical" href="https://www.citizenz.info/" />
     <meta name="author" content="citizenz">
     <meta name="generator" content="Symfony 5">
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
@@ -53,12 +81,16 @@
     <meta name="fb:app_id" content="341486105869923">
     <meta name="og:type" content="website">
 
+    {% endif %}
+
     <!-- Favicons -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Fonts -->
     <link
@@ -95,7 +127,8 @@
 
             <div class="logo">
                 <h1 class="text-light">
-                    <img src="{{ asset('img/logo.png') }}" alt="{{ site_name }}" class="img-fluid float-start me-2" style="max-width: 30px; width: 100%;">
+                    <img src="{{ asset('img/logo.png') }}" alt="{{ site_name }}" class="img-fluid float-start me-2"
+                        style="max-width: 30px; width: 100%;">
                     <a href="{{ path('home') }}">
                         <span>{{ site_name }}</span>
                     </a>
@@ -109,24 +142,27 @@
                     <li><a href="{{ path('contact') }}">Contact</a></li>
                     <li><a href="{{ path('terms') }}">CGU</a></li>
                     {% if app.user %}
-                        <li class="dropdown">
-                            <a href="{{ path('user_show', {'id': app.user.id}) }}">
-                                <span><i class="bi bi-person-circle"></i> {{ app.user.username }} <i class="bi bi-chevron-down"></i></span>
-                            </a>
-                            <ul>
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <li>
-                                        <a href="{{ path('admin') }}"><span><i class="bi bi-gear-fill"></i> Dashboard</span></a>
-                                    </li>
-                                 {% endif %}
-                                 <li>
-                                    <a href="{{ path('user_show', {'id': app.user.id}) }}"><span><i class="bi bi-person-circle"></i> Profil</span></a>
-                                </li>
-                                <li>
-                                    <a class="nav-link scrollto" href="{{ path('app_logout') }}"><span><i class="bi bi-box-arrow-right"></i> Déconnexion</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                    <li class="dropdown">
+                        <a href="{{ path('user_show', {'id': app.user.id}) }}">
+                            <span><i class="bi bi-person-circle"></i> {{ app.user.username }} <i
+                                    class="bi bi-chevron-down"></i></span>
+                        </a>
+                        <ul>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <li>
+                                <a href="{{ path('admin') }}"><span><i class="bi bi-gear-fill"></i> Dashboard</span></a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <a href="{{ path('user_show', {'id': app.user.id}) }}"><span><i
+                                            class="bi bi-person-circle"></i> Profil</span></a>
+                            </li>
+                            <li>
+                                <a class="nav-link scrollto" href="{{ path('app_logout') }}"><span><i
+                                            class="bi bi-box-arrow-right"></i> Déconnexion</span></a>
+                            </li>
+                        </ul>
+                    </li>
                     {% endif %}
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -156,7 +192,8 @@
                         <h4>Me contacter</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> Email :&nbsp;{{ site_mail }}</li>
-                            <li><i class="bx bx-chevron-right"></i> Discord :&nbsp;<a href="{{ discord_url }}">Serveur citizenz.info</a></li>
+                            <li><i class="bx bx-chevron-right"></i> Discord :&nbsp;<a href="{{ discord_url }}">Serveur
+                                    citizenz.info</a></li>
                         </ul>
 
                     </div>
@@ -183,7 +220,8 @@
 
         <div class="container">
             <div class="copyright">
-                <strong><span>{{ site_name }}</span></strong> {{ site_year }} - Some rights reserved <a href="https://www.gnu.org/licenses/gpl-3.0.fr.html" target="_blank">GPLv3</a>
+                <strong><span>{{ site_name }}</span></strong> {{ site_year }} - Some rights reserved <a
+                    href="https://www.gnu.org/licenses/gpl-3.0.fr.html" target="_blank">GPLv3</a>
             </div>
             <div class="credits fst-italic font-monospace">
                 {{ site_kaamelott1 }}
@@ -193,8 +231,8 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-                Designed by <a href="https://bootstrapmade.com/" taget="_blank">BootstrapMade</a> | 
-                Images <a href="https://pixabay.com/" taget="_blank">Pixabay</a> 
+                Designed by <a href="https://bootstrapmade.com/" taget="_blank">BootstrapMade</a> |
+                Images <a href="https://pixabay.com/" taget="_blank">Pixabay</a>
             </div>
         </div>
     </footer><!-- End Footer -->
