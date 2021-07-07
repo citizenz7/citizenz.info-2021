@@ -40,6 +40,7 @@ class SearchController extends AbstractController
         ]);
     }
 
+    
     /**
      * @Route("/handleSearch", name="handleSearch")
      * @param Request $request

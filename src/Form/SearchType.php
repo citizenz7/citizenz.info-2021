@@ -21,11 +21,6 @@ class SearchType extends AbstractType
                     'placeholder' => 'Entrez un ou plusieurs mot-clés'
                 ]
             ])
-            ->add('submit', SubmitType::class, [
-                'attr' => [
-                    'class' => 'btn btn-primary'
-                ]
-            ])
         ;
     }
 
